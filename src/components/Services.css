@@ -1,0 +1,122 @@
+.services {
+  padding: 6rem 2rem;
+  background: var(--white);
+}
+
+.services-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.service-card {
+  background: var(--white);
+  border: 2px solid #e9ecef;
+  border-radius: 15px;
+  padding: 2.5rem 2rem;
+  text-align: center;
+  transition: var(--transition);
+  position: relative;
+}
+
+.service-card:hover {
+  transform: translateY(-10px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--primary-color);
+}
+
+.service-card.popular {
+  border-color: var(--primary-color);
+  border-width: 3px;
+}
+
+.popular-badge {
+  position: absolute;
+  top: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--secondary-color);
+  color: var(--dark-color);
+  padding: 0.4rem 1.2rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  box-shadow: var(--shadow);
+}
+
+.service-icon {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+}
+
+.service-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--dark-color);
+  margin-bottom: 1rem;
+}
+
+.service-price {
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--primary-color);
+  margin-bottom: 1.5rem;
+}
+
+.service-features {
+  list-style: none;
+  text-align: left;
+  margin-bottom: 2rem;
+}
+
+.service-features li {
+  padding: 0.75rem 0;
+  border-bottom: 1px solid #f0f0f0;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.service-features li:last-child {
+  border-bottom: none;
+}
+
+.check-icon {
+  color: var(--primary-color);
+  font-weight: 700;
+  font-size: 1.2rem;
+  flex-shrink: 0;
+}
+
+.btn-service {
+  width: 100%;
+  background: var(--light-color);
+  color: var(--dark-color);
+  border: 2px solid var(--primary-color);
+  transition: var(--transition);
+}
+
+.btn-service:hover {
+  background: var(--primary-color);
+  color: var(--white);
+}
+
+.service-card.popular .btn-service {
+  background: var(--primary-color);
+  color: var(--white);
+}
+
+.service-card.popular .btn-service:hover {
+  background: #008c59;
+}
+
+@media (max-width: 768px) {
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+}
