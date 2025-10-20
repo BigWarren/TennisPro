@@ -1,23 +1,43 @@
-import React from 'react';
+import React, { Suspense, lazy } from 'react';
 import Header from './components/Header';
 import Hero from './components/Hero';
-import About from './components/About';
-import Services from './components/Services';
-import Testimonials from './components/Testimonials';
-import Contact from './components/Contact';
-import Footer from './components/Footer';
 import './App.css';
+
+// Lazy load components that are below the fold
+const About = lazy(() => import('./components/About'));
+const Services = lazy(() => import('./components/Services'));
+const Testimonials = lazy(() => import('./components/Testimonials'));
+const Contact = lazy(() => import('./components/Contact'));
+const Footer = lazy(() => import('./components/Footer'));
+
+// Loading component
+const LoadingSpinner = () => (
+  <div style={{ 
+    display: 'flex', 
+    justifyContent: 'center', 
+    alignItems: 'center', 
+    minHeight: '200px',
+    color: '#00A86B'
+  }}>
+    <div style={{ 
+      fontSize: '2rem',
+      animation: 'spin 1s linear infinite'
+    }}>🎾</div>
+  </div>
+);
 
 function App() {
   return (
     <div className="App">
       <Header />
       <Hero />
-      <About />
-      <Services />
-      <Testimonials />
-      <Contact />
-      <Footer />
+      <Suspense fallback={<LoadingSpinner />}>
+        <About />
+        <Services />
+        <Testimonials />
+        <Contact />
+        <Footer />
+      </Suspense>
     </div>
   );
 }

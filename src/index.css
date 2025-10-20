@@ -36,6 +36,11 @@ button {
   font-family: inherit;
 }
 
+img {
+  max-width: 100%;
+  height: auto;
+}
+
 .highlight {
   color: var(--primary-color);
 }
@@ -68,6 +73,7 @@ button {
   transition: var(--transition);
   text-decoration: none;
   display: inline-block;
+  will-change: transform;
 }
 
 .btn-primary {
